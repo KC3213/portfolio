@@ -1,0 +1,340 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Portfolio of Kanish Chadha, a software engineer building cloud systems, AI agents, and full-stack products."
+    />
+    <meta name="theme-color" content="#080908" />
+    <title>Kanish Chadha | Software Engineer</title>
+    <link rel="preconnect" href="https://avatars.githubusercontent.com" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <canvas id="signal-canvas" aria-hidden="true"></canvas>
+    <div class="grain" aria-hidden="true"></div>
+
+    <header class="site-header">
+      <a class="brand" href="#top" aria-label="Kanish Chadha home">
+        <span>KC</span>
+      </a>
+      <nav class="nav-links" aria-label="Primary navigation">
+        <a href="#work">Work</a>
+        <a href="#experience">Experience</a>
+        <a href="#skills">Skills</a>
+        <a href="#about">About</a>
+      </nav>
+      <a class="header-link" href="#contact">Contact</a>
+    </header>
+
+    <main id="top">
+      <section class="hero section-shell">
+        <div class="hero-content">
+          <p class="eyebrow">Software engineer intern at Oracle Cloud Infrastructure</p>
+          <h1>Kanish Chadha</h1>
+          <p class="hero-copy">
+            I build cloud-ready systems, AI agents, and full-stack products with a focus on performance,
+            security, and useful developer workflows.
+          </p>
+          <div class="hero-actions" aria-label="Profile links">
+            <a class="button primary" href="mailto:kanishChadha02@gmail.com">Email</a>
+            <a class="button" href="assets/Kanish_Chadha_Resume.pdf">Resume</a>
+            <a class="button" href="https://github.com/KC3213" target="_blank" rel="noreferrer">GitHub</a>
+            <a class="button" href="https://www.linkedin.com/in/kanishchadha/" target="_blank" rel="noreferrer">LinkedIn</a>
+            <a class="button" href="https://leetcode.com/u/kanish_the_explorer/" target="_blank" rel="noreferrer">LeetCode</a>
+          </div>
+        </div>
+
+        <aside class="hero-panel" aria-label="Profile summary">
+          <img
+            class="avatar"
+            src="https://avatars.githubusercontent.com/u/192315997?v=4"
+            alt="Kanish Chadha GitHub avatar"
+          />
+          <div class="signal-card">
+            <span class="panel-kicker">Current signal</span>
+            <strong>GenAI + OCI + distributed systems</strong>
+            <p>9.0 CGPA Computer and Electronics Engineering student shipping production-facing work.</p>
+          </div>
+        </aside>
+      </section>
+
+      <section class="metrics-strip" aria-label="Career highlights">
+        <article>
+          <strong>80%</strong>
+          <span>Swagger documentation time reduced with a GenAI authoring agent</span>
+        </article>
+        <article>
+          <strong>90%</strong>
+          <span>UI regression coverage after Playwright and Cypress expansion</span>
+        </article>
+        <article>
+          <strong>550+</strong>
+          <span>DSA problems solved across LeetCode and GeeksForGeeks</span>
+        </article>
+        <article>
+          <strong>0.005ms</strong>
+          <span>AgentGuard policy decision benchmark over 200K evaluations</span>
+        </article>
+      </section>
+
+      <section id="work" class="section-shell work-section">
+        <div class="section-heading">
+          <p class="eyebrow">Selected work</p>
+          <h2>Projects built around real product pressure.</h2>
+        </div>
+
+        <div class="project-grid">
+          <article class="project-card featured">
+            <div class="project-index">01</div>
+            <div class="project-copy">
+              <p class="project-type">MCP Security Gateway</p>
+              <h3>AgentGuard</h3>
+              <p>
+                A full-stack prototype that secures AI agents using MCP tools through runtime policy checks,
+                risk scoring, human approval, and tamper-evident audit trails.
+              </p>
+              <ul>
+                <li>Scans tool metadata before use and enforces policy on every call.</li>
+                <li>Blocks PII leakage, secrets, SQL mutation, path traversal, and external-recipient risk.</li>
+                <li>Stores agent sessions and decisions in a SQLite flight recorder with an audit hash chain.</li>
+              </ul>
+              <div class="tag-row">
+                <span>React</span>
+                <span>Node.js</span>
+                <span>TypeScript MCP SDK</span>
+                <span>Prisma</span>
+                <span>Socket.IO</span>
+              </div>
+              <a class="text-link" href="https://github.com/KC3213/agentguard-mcp-security-gateway" target="_blank" rel="noreferrer">
+                View repository
+              </a>
+            </div>
+            <div class="project-visual policy-visual" aria-hidden="true">
+              <div class="policy-line allowed"><span>tool.scan</span><strong>ALLOW</strong></div>
+              <div class="policy-line review"><span>email.internal</span><strong>REVIEW</strong></div>
+              <div class="policy-line blocked"><span>sql.drop</span><strong>BLOCK</strong></div>
+              <div class="policy-line blocked"><span>secret.export</span><strong>BLOCK</strong></div>
+              <div class="hash-chain">
+                <span></span><span></span><span></span><span></span>
+              </div>
+            </div>
+          </article>
+
+          <article class="project-card featured">
+            <div class="project-index">02</div>
+            <div class="project-copy">
+              <p class="project-type">Collaborative Project Management</p>
+              <h3>OneForAll</h3>
+              <p>
+                A Jira-style workspace for team execution with ticket stages, priorities, invite-code onboarding,
+                real-time chat, and AI summaries for reducing task-thread context switching.
+              </p>
+              <ul>
+                <li>Built with Node.js, Express, MongoDB, React, and Socket.IO.</li>
+                <li>Uses Groq LLaMA 3 to convert task threads and chat history into action-item digests.</li>
+                <li>Hardens auth with RBAC, bcrypt, audit logging, and Redis-backed JWT blacklist expiry.</li>
+              </ul>
+              <div class="tag-row">
+                <span>React</span>
+                <span>Express</span>
+                <span>MongoDB</span>
+                <span>Redis</span>
+                <span>Groq API</span>
+              </div>
+              <a class="text-link" href="https://github.com/KC3213" target="_blank" rel="noreferrer">
+                GitHub profile
+              </a>
+            </div>
+            <div class="project-visual board-visual" aria-hidden="true">
+              <div><span>Backlog</span><b>4</b></div>
+              <div><span>Active</span><b>7</b></div>
+              <div><span>Review</span><b>3</b></div>
+              <div><span>Done</span><b>12</b></div>
+              <p>AI summary ready</p>
+            </div>
+          </article>
+
+          <article class="project-card compact">
+            <div class="project-index">03</div>
+            <p class="project-type">Log Infrastructure</p>
+            <h3>Distributed Log Aggregator</h3>
+            <p>
+              A Rust project exploring distributed, fault-tolerant, strongly consistent event-log design.
+            </p>
+            <div class="tag-row">
+              <span>Rust</span>
+              <span>Distributed systems</span>
+              <span>Event logs</span>
+            </div>
+            <a class="text-link" href="https://github.com/KC3213/Distributed-Log-Aggregator" target="_blank" rel="noreferrer">
+              View repository
+            </a>
+          </article>
+
+          <article class="project-card compact">
+            <div class="project-index">04</div>
+            <p class="project-type">AI + Computer Vision</p>
+            <h3>AI Surveillance</h3>
+            <p>
+              A JavaScript-based experimentation repo around AI-assisted monitoring workflows and visual automation.
+            </p>
+            <div class="tag-row">
+              <span>JavaScript</span>
+              <span>AI</span>
+              <span>Automation</span>
+            </div>
+            <a class="text-link" href="https://github.com/KC3213/Ai-Surveillance" target="_blank" rel="noreferrer">
+              View repository
+            </a>
+          </article>
+        </div>
+      </section>
+
+      <section id="experience" class="section-shell timeline-section">
+        <div class="section-heading">
+          <p class="eyebrow">Internship experience</p>
+          <h2>Production work across cloud, frontend, APIs, Kafka, and dashboards.</h2>
+        </div>
+
+        <div class="timeline">
+          <article class="timeline-item active">
+            <div class="timeline-date">Jan 2026 - Present</div>
+            <div class="timeline-content">
+              <p class="project-type">Software Development Engineer Intern - ICON</p>
+              <h3>Oracle Cloud Infrastructure</h3>
+              <ul>
+                <li>Designed and shipped a GenAI agent for OpenAPI spec authoring across 5+ OCI microservice endpoints.</li>
+                <li>Built a reusable React customer input drawer with conditional SKU logic across service configurations.</li>
+                <li>Expanded Playwright and Cypress coverage from 60% to 90% for distributed UI regression safety.</li>
+              </ul>
+            </div>
+          </article>
+
+          <article class="timeline-item">
+            <div class="timeline-date">Jun 2025 - Aug 2025</div>
+            <div class="timeline-content">
+              <p class="project-type">Software Development Engineer Intern</p>
+              <h3>Freight Tiger</h3>
+              <ul>
+                <li>Reduced bulk-upload onboarding API response time by 40% through a single primary-field lookup path.</li>
+                <li>Implemented idempotency keys across 8 endpoints to eliminate duplicate microservice transactions.</li>
+                <li>Resolved Kafka data-loss failures and built PostgreSQL-backed KPI reporting to save 5+ hours each week.</li>
+              </ul>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section id="skills" class="skills-band">
+        <div class="section-shell skills-layout">
+          <div>
+            <p class="eyebrow">Stack</p>
+            <h2>Tools I use to move from prototype to reliable system.</h2>
+          </div>
+          <div class="skill-cloud" aria-label="Technical skills">
+            <span>Java</span>
+            <span>Python</span>
+            <span>C++</span>
+            <span>JavaScript</span>
+            <span>TypeScript</span>
+            <span>SQL</span>
+            <span>React</span>
+            <span>Node.js</span>
+            <span>Express</span>
+            <span>Socket.IO</span>
+            <span>Prisma</span>
+            <span>Kafka</span>
+            <span>Redis</span>
+            <span>OCI</span>
+            <span>Docker</span>
+            <span>ArgoCD</span>
+            <span>PostgreSQL</span>
+            <span>MongoDB</span>
+            <span>Elasticsearch</span>
+            <span>Playwright</span>
+            <span>Cypress</span>
+            <span>Power BI</span>
+            <span>MCP</span>
+            <span>RAG</span>
+          </div>
+        </div>
+      </section>
+
+      <section class="section-shell proof-section">
+        <div class="section-heading">
+          <p class="eyebrow">Proof points</p>
+          <h2>Academic and competitive signals.</h2>
+        </div>
+        <div class="proof-grid">
+          <article>
+            <strong>9.0</strong>
+            <span>CGPA</span>
+            <p>B.Tech in Computer and Electronics Engineering at Thapar Institute of Engineering and Technology.</p>
+          </article>
+          <article>
+            <strong>Rs. 1.07L</strong>
+            <span>Scholarship</span>
+            <p>Merit-based scholarship for outstanding academic performance at the top of the cohort.</p>
+          </article>
+          <article>
+            <strong>Runner-up</strong>
+            <span>Hackathon</span>
+            <p>Microsoft Learn Student Chapter Hackathon among 300+ participants.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="section-shell certificates-section">
+        <div class="section-heading">
+          <p class="eyebrow">Certificates</p>
+          <h2>Reserved for verified credentials.</h2>
+        </div>
+        <div class="certificate-placeholder">
+          <p>
+            Certificate cards will go here once the final list is ready. The layout is already prepared for issuer,
+            credential ID, date, and verification link.
+          </p>
+        </div>
+      </section>
+
+      <section id="about" class="section-shell about-section">
+        <div class="about-copy">
+          <p class="eyebrow">About</p>
+          <h2>I like systems that make complicated work feel controlled.</h2>
+          <p>
+            I am a Computer and Electronics Engineering student at Thapar Institute of Engineering and Technology,
+            currently working as an SDE intern with Oracle Cloud Infrastructure. My work sits between product
+            engineering, backend reliability, frontend quality, and applied AI.
+          </p>
+          <p>
+            The projects I care about most are the ones where the interface is only the surface: behind it there is
+            access control, auditability, latency work, test coverage, and a clear operating model.
+          </p>
+        </div>
+        <div class="about-console" aria-label="Current focus console">
+          <div class="console-row"><span>focus</span><strong>agentic workflows with runtime controls</strong></div>
+          <div class="console-row"><span>learning</span><strong>distributed systems and cloud reliability</strong></div>
+          <div class="console-row"><span>building</span><strong>portfolio case studies and production-grade demos</strong></div>
+        </div>
+      </section>
+    </main>
+
+    <footer id="contact" class="site-footer">
+      <div>
+        <p class="eyebrow">Contact</p>
+        <h2>Let’s build the next serious demo.</h2>
+      </div>
+      <div class="footer-links">
+        <a href="mailto:kanishChadha02@gmail.com">kanishChadha02@gmail.com</a>
+        <a href="tel:+916239276743">+91 6239276743</a>
+        <a href="https://github.com/KC3213" target="_blank" rel="noreferrer">GitHub</a>
+        <a href="https://www.linkedin.com/in/kanishchadha/" target="_blank" rel="noreferrer">LinkedIn</a>
+      </div>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>
