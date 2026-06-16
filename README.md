@@ -16,14 +16,16 @@ Dark premium portfolio site for Kanish Chadha.
 - LinkedIn: <https://www.linkedin.com/in/kanishchadha/>
 - LeetCode: <https://leetcode.com/u/Kanish_the_explorer/>
 - GeeksForGeeks: <https://www.geeksforgeeks.org/profile/kchadha393r>
+- OneForAll live deployment: <http://140.245.6.123/>
+- OneForAll repository: <https://github.com/KC3213/Backened-AI-Project>
 - AgentGuard README: <https://github.com/KC3213/agentguard-mcp-security-gateway>
 
 ## Notes
 
 - The site is static and has no package install step.
 - `index.html` opens directly in a browser.
-- Certificates are intentionally left as a placeholder until the final certificate list is provided.
-- The direct OneForAll/Jira-style project repo was not visible in the public GitHub repo index, so that card currently links to the GitHub profile.
+- Certificates are included with downloadable proof assets under `assets/certificates/`.
+- The public page intentionally omits the phone number. The public resume asset is a phone-redacted PDF generated from the original resume.
 
 ## Local Preview
 

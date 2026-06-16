@@ -401,6 +401,12 @@ a {
   color: var(--amber);
 }
 
+.project-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
 .project-visual {
   min-height: 190px;
   border: 1px solid rgba(242, 234, 219, 0.1);
