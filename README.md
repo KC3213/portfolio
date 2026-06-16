@@ -42,4 +42,10 @@ Dark premium portfolio site for Kanish Chadha.
 
 ## Local Preview
 
-Open `index.html` directly, or serve the folder with any static server.
+Run it like a normal project:
+
+```bash
+npm run dev
+```
+
+Then open <http://127.0.0.1:5173/>.
