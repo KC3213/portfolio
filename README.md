@@ -5,6 +5,7 @@ Dark premium portfolio site for Kanish Chadha.
 ## Source Content
 
 - Resume: `/Users/kachadha/Downloads/Kanish_Resume.pdf`
+- Profile photo: `/Users/kachadha/Downloads/WhatsApp Image 2026-05-30 at 5.04.17 PM.jpeg`
 - GitHub: <https://github.com/KC3213>
 - LinkedIn: <https://www.linkedin.com/in/kanishchadha/>
 - LeetCode: <https://leetcode.com/u/kanish_the_explorer/>
