@@ -5,11 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta
       name="description"
-      content="Portfolio of Kanish Chadha, a software engineer building cloud systems, AI agents, and full-stack products."
+      content="Portfolio of Kanish Chadha, a software engineer building cloud systems, secure AI agents, and embedded AI products."
     />
     <meta name="theme-color" content="#080908" />
     <title>Kanish Chadha | Software Engineer</title>
-    <link rel="stylesheet" href="styles.css?v=certifications" />
+    <link rel="stylesheet" href="styles.css?v=roles-embedded" />
   </head>
   <body>
     <canvas id="signal-canvas" aria-hidden="true"></canvas>
@@ -21,6 +21,7 @@
       </a>
       <nav class="nav-links" aria-label="Primary navigation">
         <a href="#work">Work</a>
+        <a href="#roles">Roles</a>
         <a href="#experience">Experience</a>
         <a href="#skills">Skills</a>
         <a href="#certificates">Certificates</a>
@@ -35,8 +36,8 @@
           <p class="eyebrow">Software engineer intern at Oracle Cloud Infrastructure</p>
           <h1>Kanish Chadha</h1>
           <p class="hero-copy">
-            I build cloud-ready systems, AI agents, and full-stack products with a focus on performance,
-            security, and useful developer workflows.
+            I build cloud-ready systems, secure AI agents, and embedded AI products with a focus on
+            performance, reliability, and useful developer workflows.
           </p>
           <div class="hero-actions" aria-label="Profile links">
             <a class="button primary" href="mailto:kanishChadha02@gmail.com">Email</a>
@@ -56,7 +57,7 @@
           />
           <div class="signal-card">
             <span class="panel-kicker">Current signal</span>
-            <strong>GenAI + OCI + distributed systems</strong>
+            <strong>GenAI + OCI + edge AI</strong>
             <p>9.0 CGPA Computer and Electronics Engineering student shipping production-facing work.</p>
           </div>
         </aside>
@@ -81,10 +82,53 @@
         </article>
       </section>
 
+      <section id="roles" class="section-shell role-section">
+        <div class="section-heading">
+          <p class="eyebrow">Two roles</p>
+          <h2>Software developer depth with electronics and embedded systems range.</h2>
+        </div>
+
+        <div class="role-grid">
+          <article class="role-card">
+            <div class="role-icon">01</div>
+            <p class="project-type">Software Developer</p>
+            <h3>Cloud, full-stack, and AI agent systems</h3>
+            <p>
+              I work on backend APIs, React interfaces, test automation, distributed workflows, and security-heavy
+              agent products where observability and policy enforcement matter.
+            </p>
+            <div class="role-stack">
+              <span>React</span>
+              <span>Node.js</span>
+              <span>OCI</span>
+              <span>Kafka</span>
+              <span>MCP</span>
+            </div>
+          </article>
+
+          <article class="role-card">
+            <div class="role-icon">02</div>
+            <p class="project-type">Electronics / Embedded Systems</p>
+            <h3>Edge inference, hardware control, and robotics</h3>
+            <p>
+              I also build at the hardware-software boundary, connecting computer vision pipelines to embedded
+              mobility controls and validating real-time behavior on constrained devices.
+            </p>
+            <div class="role-stack">
+              <span>NVIDIA DeepStream</span>
+              <span>CUDA</span>
+              <span>YOLOv8</span>
+              <span>JetBot</span>
+              <span>C++</span>
+            </div>
+          </article>
+        </div>
+      </section>
+
       <section id="work" class="section-shell work-section">
         <div class="section-heading">
           <p class="eyebrow">Selected work</p>
-          <h2>Projects built around real product pressure.</h2>
+          <h2>Projects built across product software and embedded AI.</h2>
         </div>
 
         <div class="project-grid">
@@ -100,6 +144,7 @@
               <ul>
                 <li>Scans tool metadata before use and enforces policy on every call.</li>
                 <li>Blocks PII leakage, secrets, SQL mutation, path traversal, and external-recipient risk.</li>
+                <li>Ships Agent Console, MCP Lab, Control Plane, Tool Registry, Flight Recorder, and Policy Editor views.</li>
                 <li>Stores agent sessions and decisions in a SQLite flight recorder with an audit hash chain.</li>
               </ul>
               <div class="tag-row">
@@ -113,13 +158,32 @@
                 View repository
               </a>
             </div>
-            <div class="project-visual policy-visual" aria-hidden="true">
-              <div class="policy-line allowed"><span>tool.scan</span><strong>ALLOW</strong></div>
-              <div class="policy-line review"><span>email.internal</span><strong>REVIEW</strong></div>
-              <div class="policy-line blocked"><span>sql.drop</span><strong>BLOCK</strong></div>
-              <div class="policy-line blocked"><span>secret.export</span><strong>BLOCK</strong></div>
-              <div class="hash-chain">
-                <span></span><span></span><span></span><span></span>
+            <div class="project-visual screenshot-visual" aria-label="AgentGuard product screenshots">
+              <figure class="main-shot">
+                <img src="assets/projects/agentguard-console.png" alt="AgentGuard Agent Console workflow screenshot" />
+                <figcaption>Agent Console</figcaption>
+              </figure>
+              <div class="shot-strip">
+                <figure>
+                  <img src="assets/projects/agentguard-mcp-lab.png" alt="AgentGuard MCP Lab screenshot" />
+                  <figcaption>MCP Lab</figcaption>
+                </figure>
+                <figure>
+                  <img src="assets/projects/agentguard-control-plane.png" alt="AgentGuard MCP Control Plane screenshot" />
+                  <figcaption>Control Plane</figcaption>
+                </figure>
+                <figure>
+                  <img src="assets/projects/agentguard-tool-registry.png" alt="AgentGuard Tool Registry screenshot" />
+                  <figcaption>Registry</figcaption>
+                </figure>
+                <figure>
+                  <img src="assets/projects/agentguard-flight-recorder.png" alt="AgentGuard Flight Recorder screenshot" />
+                  <figcaption>Recorder</figcaption>
+                </figure>
+                <figure>
+                  <img src="assets/projects/agentguard-policies.png" alt="AgentGuard Policy Editor screenshot" />
+                  <figcaption>Policies</figcaption>
+                </figure>
               </div>
             </div>
           </article>
@@ -163,8 +227,50 @@
             </div>
           </article>
 
-          <article class="project-card compact">
+          <article class="project-card featured embedded-card">
             <div class="project-index">03</div>
+            <div class="project-copy">
+              <p class="project-type">Embedded AI + Robotics</p>
+              <h3>JetBot Autonomous Buggy</h3>
+              <p>
+                Edge robotics work connecting a Dockerized NVIDIA DeepStream vision pipeline with JetBot mobility
+                controls for low-latency autonomous behavior on embedded hardware.
+              </p>
+              <ul>
+                <li>Achieved 30+ FPS real-time detection on embedded hardware across 100 YOLOv8 classes.</li>
+                <li>Optimized CUDA kernel parameters for low-latency edge inference in a Dockerized DeepStream setup.</li>
+                <li>Reduced navigation response to a single inference cycle by integrating the C++ detection pipeline with mobility controls.</li>
+                <li>Documented the hardware-software interface and validated autonomous behavior under test conditions.</li>
+              </ul>
+              <div class="tag-row">
+                <span>NVIDIA DeepStream</span>
+                <span>CUDA</span>
+                <span>YOLOv8</span>
+                <span>JetBot</span>
+                <span>C++</span>
+                <span>Docker</span>
+              </div>
+            </div>
+            <div class="project-visual embedded-visual" aria-label="JetBot inference pipeline">
+              <div class="pipeline-meter">
+                <span>30+ FPS</span>
+                <strong>single-cycle response</strong>
+              </div>
+              <div class="pipeline-flow">
+                <div class="pipeline-node">Camera</div>
+                <div class="pipeline-node">YOLOv8</div>
+                <div class="pipeline-node">CUDA</div>
+                <div class="pipeline-node">Mobility</div>
+              </div>
+              <div class="sensor-grid" aria-hidden="true">
+                <span></span><span></span><span></span><span></span><span></span><span></span>
+                <span></span><span></span><span></span><span></span><span></span><span></span>
+              </div>
+            </div>
+          </article>
+
+          <article class="project-card compact">
+            <div class="project-index">04</div>
             <p class="project-type">Log Infrastructure</p>
             <h3>Distributed Log Aggregator</h3>
             <p>
@@ -181,7 +287,7 @@
           </article>
 
           <article class="project-card compact">
-            <div class="project-index">04</div>
+            <div class="project-index">05</div>
             <p class="project-type">AI + Computer Vision</p>
             <h3>AI Surveillance</h3>
             <p>
@@ -265,6 +371,11 @@
             <span>Power BI</span>
             <span>MCP</span>
             <span>RAG</span>
+            <span>NVIDIA DeepStream</span>
+            <span>CUDA</span>
+            <span>YOLOv8</span>
+            <span>JetBot</span>
+            <span>Embedded Linux</span>
           </div>
         </div>
       </section>
@@ -357,6 +468,7 @@
         <div class="about-console" aria-label="Current focus console">
           <div class="console-row"><span>focus</span><strong>agentic workflows with runtime controls</strong></div>
           <div class="console-row"><span>learning</span><strong>distributed systems and cloud reliability</strong></div>
+          <div class="console-row"><span>embedded</span><strong>low-latency robotics and edge inference</strong></div>
           <div class="console-row"><span>building</span><strong>new ideas into production-grade demos</strong></div>
         </div>
       </section>

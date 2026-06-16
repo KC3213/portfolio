@@ -19,12 +19,25 @@ Dark premium portfolio site for Kanish Chadha.
 - OneForAll live deployment: <http://140.245.6.123/>
 - OneForAll repository: <https://github.com/KC3213/Backened-AI-Project>
 - AgentGuard README: <https://github.com/KC3213/agentguard-mcp-security-gateway>
+- AgentGuard screenshots:
+  - `assets/projects/agentguard-console.png`
+  - `assets/projects/agentguard-mcp-lab.png`
+  - `assets/projects/agentguard-control-plane.png`
+  - `assets/projects/agentguard-tool-registry.png`
+  - `assets/projects/agentguard-flight-recorder.png`
+  - `assets/projects/agentguard-policies.png`
+- JetBot autonomous buggy project:
+  - 30+ FPS real-time detection on embedded hardware.
+  - Dockerized NVIDIA DeepStream pipeline with CUDA tuning.
+  - C++ detection pipeline integrated with JetBot mobility controls.
+  - Validated autonomous behavior under test conditions.
 
 ## Notes
 
 - The site is static and has no package install step.
 - `index.html` opens directly in a browser.
 - Certificates are included with downloadable proof assets under `assets/certificates/`.
+- AgentGuard project screenshots are included under `assets/projects/`.
 - The public page intentionally omits the phone number. The public resume asset is a phone-redacted PDF generated from the original resume.
 
 ## Local Preview
