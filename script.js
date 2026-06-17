@@ -1,6 +1,8 @@
 const canvas = document.getElementById("signal-canvas");
 const ctx = canvas.getContext("2d");
 
+document.documentElement.classList.add("motion-ready");
+
 let width = 0;
 let height = 0;
 let particles = [];
@@ -130,11 +132,257 @@ window.addEventListener("mouseleave", () => {
 resize();
 render();
 
+function updateScrolledState() {
+  document.body.classList.toggle("has-scrolled", window.scrollY > 70);
+}
+
+updateScrolledState();
+window.addEventListener("scroll", updateScrolledState, { passive: true });
+
+function targetScrollTop(target) {
+  const scrollMargin = Number.parseFloat(window.getComputedStyle(target).scrollMarginTop) || 0;
+  return Math.max(0, target.getBoundingClientRect().top + window.scrollY - scrollMargin);
+}
+
+function scrollToTarget(target, behavior = reduceMotion ? "auto" : "smooth") {
+  const top = targetScrollTop(target);
+  window.scrollTo({ top, behavior });
+}
+
+function jumpToTarget(target) {
+  const top = targetScrollTop(target);
+  window.scrollTo(0, top);
+  document.documentElement.scrollTop = top;
+  document.body.scrollTop = top;
+}
+
+let handledHash = "";
+
 document.querySelectorAll('a[href^="#"]').forEach((link) => {
   link.addEventListener("click", (event) => {
-    const target = document.querySelector(link.getAttribute("href"));
+    const href = link.getAttribute("href");
+    const target = document.querySelector(href);
     if (!target) return;
+
     event.preventDefault();
-    target.scrollIntoView({ behavior: reduceMotion ? "auto" : "smooth", block: "start" });
+    handledHash = href;
+    history.pushState(null, "", href);
+    scrollToTarget(target);
   });
 });
+
+function scrollToCurrentHash() {
+  if (!window.location.hash) return;
+
+  const targetId = decodeURIComponent(window.location.hash.slice(1));
+  const target = document.getElementById(targetId);
+  if (!target) return;
+
+  handledHash = window.location.hash;
+  jumpToTarget(target);
+  window.requestAnimationFrame(() => jumpToTarget(target));
+  window.setTimeout(() => jumpToTarget(target), 80);
+  window.setTimeout(() => jumpToTarget(target), 220);
+  window.setTimeout(() => jumpToTarget(target), 600);
+  window.setTimeout(() => jumpToTarget(target), 1200);
+}
+
+scrollToCurrentHash();
+window.addEventListener("load", scrollToCurrentHash);
+window.addEventListener("hashchange", scrollToCurrentHash);
+window.setInterval(() => {
+  if (window.location.hash && window.location.hash !== handledHash) {
+    scrollToCurrentHash();
+  }
+}, 250);
+
+const kcMark = document.querySelector(".kc-mark");
+
+if (kcMark) {
+  const kcQuestion = kcMark.querySelector("[data-kc-question]");
+  const kcQuestions = [
+    "what should I build next?",
+    "what should I design today?",
+    "where should I explore next?",
+    "what should I cook after this?",
+  ];
+
+  const askKcQuestion = () => {
+    if (!kcQuestion) return;
+    kcQuestion.textContent = kcQuestions[Math.floor(Math.random() * kcQuestions.length)];
+  };
+
+  const setImagining = (active) => {
+    kcMark.classList.toggle("is-imagining", active);
+
+    if (active) askKcQuestion();
+  };
+
+  kcMark.addEventListener("pointerenter", () => setImagining(true));
+  kcMark.addEventListener("pointerleave", () => setImagining(false));
+  kcMark.addEventListener("pointercancel", () => setImagining(false));
+  kcMark.addEventListener("focusin", () => setImagining(true));
+  kcMark.addEventListener("focusout", () => setImagining(false));
+}
+
+const motionTargets = Array.from(
+  document.querySelectorAll(
+    [
+      ".profile-section",
+      ".track-hero > *",
+      ".track-scroll-hint",
+      ".track-stats article",
+      ".track-stage-rail",
+      ".stage-hint",
+      ".track-stage-panel .section-heading",
+      ".color-title span",
+      ".skill-token",
+      ".experience-card",
+      ".time-pill",
+      ".impact-point",
+      ".track-project-media",
+      ".compact-project-media",
+      ".smartkart-strip img",
+      ".project-report-preview",
+      ".track-project",
+      ".project-action-hint",
+      ".metrics-strip article",
+      ".role-section .section-heading",
+      ".role-card",
+      ".role-click-hint",
+      ".certificates-section .section-heading",
+      ".certificate-preview",
+      ".certificate-card",
+      ".certificate-meta",
+      ".about-copy",
+      ".personal-ribbon span",
+      ".about-signal-board article",
+      ".site-footer > *"
+    ].join(",")
+  )
+);
+
+motionTargets.forEach((target, index) => {
+  target.classList.add("motion-item");
+  target.style.setProperty("--motion-delay", `${Math.min((index % 8) * 55, 275)}ms`);
+});
+
+if (reduceMotion || !("IntersectionObserver" in window)) {
+  motionTargets.forEach((target) => target.classList.add("is-visible"));
+} else {
+  const revealObserver = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("is-visible");
+        }
+      });
+    },
+    { threshold: 0.16, rootMargin: "0px 0px -10% 0px" }
+  );
+
+  motionTargets.forEach((target) => revealObserver.observe(target));
+
+  let ticking = false;
+  function updatePastTargets() {
+    motionTargets.forEach((target) => {
+      const rect = target.getBoundingClientRect();
+      target.classList.toggle("is-past", rect.bottom < window.innerHeight * 0.18);
+    });
+    ticking = false;
+  }
+
+  window.addEventListener(
+    "scroll",
+    () => {
+      if (ticking) return;
+      ticking = true;
+      requestAnimationFrame(updatePastTargets);
+    },
+    { passive: true }
+  );
+
+  updatePastTargets();
+}
+
+const stagePanels = Array.from(document.querySelectorAll(".track-stage-panel[data-stage-title]"));
+const stageTitle = document.querySelector("[data-stage-title-output]");
+const stageCopy = document.querySelector("[data-stage-copy-output]");
+const stageIndex = document.querySelector("[data-stage-index-output]");
+const stageMeter = document.querySelector("[data-stage-meter]");
+const stageNavLinks = Array.from(document.querySelectorAll("[data-stage-nav]"));
+
+if (stagePanels.length && stageTitle && stageCopy && stageIndex) {
+  let activeStage = "";
+  let stageTicking = false;
+
+  function setActiveStage(panel) {
+    if (!panel || panel.dataset.stage === activeStage) return;
+
+    activeStage = panel.dataset.stage;
+    document.body.dataset.trackStage = activeStage;
+    stageTitle.textContent = panel.dataset.stageTitle || "";
+    stageCopy.textContent = panel.dataset.stageCopy || "";
+    stageIndex.textContent = panel.dataset.stageIndex || "";
+
+    if (stageMeter) {
+      const index = stagePanels.indexOf(panel) + 1;
+      stageMeter.style.setProperty("--stage-meter-width", `${(index / stagePanels.length) * 100}%`);
+    }
+
+    stagePanels.forEach((stagePanel) => {
+      stagePanel.classList.toggle("is-active-stage", stagePanel === panel);
+    });
+
+    stageNavLinks.forEach((link) => {
+      link.classList.toggle("is-active-stage-link", link.dataset.stageNav === activeStage);
+    });
+  }
+
+  function updateStageFromScroll() {
+    const hashTarget = window.location.hash
+      ? stagePanels.find((panel) => `#${panel.id}` === window.location.hash)
+      : null;
+
+    if (hashTarget && window.scrollY < 4) {
+      setActiveStage(hashTarget);
+      stageTicking = false;
+      return;
+    }
+
+    const targetLine = window.innerHeight * 0.46;
+    let selectedPanel = null;
+    let closestPanel = stagePanels[0];
+    let closestDistance = Number.POSITIVE_INFINITY;
+
+    stagePanels.forEach((panel) => {
+      const rect = panel.getBoundingClientRect();
+      const containsAnchor = rect.top <= targetLine && rect.bottom >= targetLine;
+      const distance = Math.min(Math.abs(rect.top - targetLine), Math.abs(rect.bottom - targetLine));
+
+      if (containsAnchor) {
+        selectedPanel = panel;
+      }
+
+      if (distance < closestDistance) {
+        closestDistance = distance;
+        closestPanel = panel;
+      }
+    });
+
+    if (!selectedPanel) selectedPanel = closestPanel;
+    setActiveStage(selectedPanel);
+    stageTicking = false;
+  }
+
+  function queueStageUpdate() {
+    if (stageTicking) return;
+    stageTicking = true;
+    requestAnimationFrame(updateStageFromScroll);
+  }
+
+  window.addEventListener("scroll", queueStageUpdate, { passive: true });
+  window.addEventListener("resize", queueStageUpdate);
+  window.setInterval(queueStageUpdate, 450);
+  updateStageFromScroll();
+}

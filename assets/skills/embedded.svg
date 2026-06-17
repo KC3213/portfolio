@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Embedded systems">
+  <rect width="64" height="64" rx="14" fill="#111812"/>
+  <rect x="18" y="18" width="28" height="28" rx="5" fill="#65d6bf"/>
+  <rect x="25" y="25" width="14" height="14" rx="2" fill="#111812"/>
+  <g stroke="#f1b35f" stroke-linecap="round" stroke-width="3">
+    <path d="M23 10v8M32 10v8M41 10v8M23 46v8M32 46v8M41 46v8M10 23h8M10 32h8M10 41h8M46 23h8M46 32h8M46 41h8"/>
+  </g>
+</svg>
