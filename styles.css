@@ -1413,6 +1413,17 @@ body.has-scrolled .site-header,
   object-fit: contain;
 }
 
+.oracle-badge-preview {
+  background:
+    radial-gradient(circle at 50% 42%, rgba(255, 184, 92, 0.18), transparent 46%),
+    linear-gradient(135deg, rgba(17, 18, 17, 0.96), rgba(8, 9, 8, 0.72));
+}
+
+.oracle-badge-preview img {
+  padding: 18px;
+  object-fit: contain;
+}
+
 .certificate-card:hover .certificate-preview::after {
   opacity: 0.82;
   transform: translateX(58%);
