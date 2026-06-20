@@ -48,7 +48,7 @@ Dark premium portfolio site for Kanish Chadha.
 
 - The site is static and has no package install step.
 - `index.html` opens directly in a browser.
-- Separate focused portfolio tracks live at `sde.html` and `electronics.html`.
+- Separate focused portfolio tracks live at the clean routes `/sde/` and `/electronics/`.
 - Certificates are included with downloadable proof assets under `assets/certificates/`, with SDE and Electronics proof separated on the focused track pages.
 - Certificate first-page preview thumbnails are included under `assets/certificates/previews/`.
 - AgentGuard project screenshots are included under `assets/projects/`.
